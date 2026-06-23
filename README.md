@@ -1,4 +1,4 @@
-# Lung Disease Classification — Serverless Deep Learning on AWS
+# Lung Disease Classification, Serverless Deep Learning on AWS
 
 Classifies chest X-rays as **Normal**, **Pneumonia**, or **ILD** (interstitial lung disease) using an EfficientNet-B2 model, served through a fully serverless AWS pipeline. A user uploads an X-ray in a Streamlit dashboard, the image is sent to a containerized AWS Lambda running ONNX inference, and the result comes back with a confidence score and a Grad-CAM heatmap showing which lung regions drove the prediction.
 
@@ -106,7 +106,3 @@ One example per class from the live app. Percentages are the model's per-image c
 - **Cold starts.** The first Lambda invocation after idle adds 2–4 seconds.
 - **Approximate explainability.** Grad-CAM highlights regions that influenced the prediction but is not a clinical localization of pathology.
 - **Small dataset.** 5,307 images. The Pneumonia class had only 307 real images and was oversampled in training, so real-world generalization would need far more data.
-
-## Acknowledgements
-
-Built as the final project for ITC 6460 (Cloud Analytics) at Northeastern University. NIH ChestX-ray14 dataset courtesy of the NIH Clinical Center.
